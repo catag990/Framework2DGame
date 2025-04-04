@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework2DGame.Base;
+using Framework2DGame.Interfaces;
 
 namespace Framework2DGame
 {
-    internal class AttackItem(string name, int hit, int range)
+    public class AttackItem : WorldObject, IAttackItem
     {
-        public string Name { get; set; } = name;
-        public int Hit { get; set; } = hit;
-        public int Range { get; set; } = range;
+        public int Hit { get; }
+        public int Range {  get; }
+
+        public AttackItem(string name, int hit, int range, bool lootable, bool removable, string description, World world)
+        : base(name, lootable, removable, description, ItemCategory.attack, world)
+        {
+            Hit = hit;
+            Range = range;
+            
+        }
+
 
     }
 }

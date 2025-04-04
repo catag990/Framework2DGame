@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Configuration>
+	<World>
+		<WorldSize>
+			<MaxX>300</MaxX>
+			<MaxY>250</MaxY>
+		</WorldSize>
+		<Level>Novice</Level>
+	</World>
+	
+</Configuration>
+

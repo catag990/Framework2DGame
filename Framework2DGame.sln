@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework2DGame", "Framework2DGame\Framework2DGame.csproj", "{E97242B1-6A12-48B3-BD49-3902BB26606E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{0ED163EA-46DA-4079-A9DD-57F9EDF0AB60}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E97242B1-6A12-48B3-BD49-3902BB26606E} = {E97242B1-6A12-48B3-BD49-3902BB26606E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{E97242B1-6A12-48B3-BD49-3902BB26606E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E97242B1-6A12-48B3-BD49-3902BB26606E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E97242B1-6A12-48B3-BD49-3902BB26606E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ED163EA-46DA-4079-A9DD-57F9EDF0AB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED163EA-46DA-4079-A9DD-57F9EDF0AB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED163EA-46DA-4079-A9DD-57F9EDF0AB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED163EA-46DA-4079-A9DD-57F9EDF0AB60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

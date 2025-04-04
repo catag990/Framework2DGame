@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework2DGame.Base;
 
 namespace Framework2DGame
 {
-    internal class DefenseItem(string name, int reduceHitPoint)
+    internal class DefenseItem(string name, int reduceHitPoint, bool lootable, bool removable, string description, World world) : WorldObject(name, lootable, removable, description, ItemCategory.defense, world)
     {
-        public string Name { get; set; } = name;
-        public int ReduceHitPoint { get; set; } = reduceHitPoint;
+        public int ReduceHitPoint = reduceHitPoint;
+        
+        
     }
 }
