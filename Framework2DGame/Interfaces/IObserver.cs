@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp
+namespace Framework2DGame.Interfaces
 {
-    internal class Class1
+    public interface IObserver
     {
+        void OnCreatureHit(Creature creature, int damage);
     }
 }
