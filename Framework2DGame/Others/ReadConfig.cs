@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Framework2DGame
+namespace Framework2DGame.Others
 {
     /// <summary>
     /// Config reader to save the information in the configuration file
@@ -31,7 +31,7 @@ namespace Framework2DGame
                 LoggingClass.Critical("Failed to load Config file");
             }
 
-            
+
 
             XmlNode? MaxX_XML = configXML.DocumentElement.SelectSingleNode("World/WorldSize/MaxX");
             if (MaxX_XML != null)
@@ -66,7 +66,7 @@ namespace Framework2DGame
             }
 
         }
-        
+
 
     }
 }

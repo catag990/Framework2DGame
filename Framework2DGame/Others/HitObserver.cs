@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework2DGame.Base;
 using Framework2DGame.Interfaces;
 
-namespace Framework2DGame
+namespace Framework2DGame.Others
 {
     /// <summary>
     /// Observer of hits 

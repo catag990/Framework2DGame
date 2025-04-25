@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework2DGame.Base;
+using Framework2DGame.Items;
 
 namespace Framework2DGame
 {
@@ -16,7 +18,7 @@ namespace Framework2DGame
     /// <param name="removable">If the item is removable</param>
     /// <param name="description">Description of the item</param>
     /// <param name="world">Reference to the world it exist in</param>
-    public class Sword(string name, int hit, int range, bool lootable, bool removable, string description, World world) : 
+    public class Sword(string name, int hit, int range, bool lootable, bool removable, string description, World world) :
         AttackItem(name, hit, range, lootable, removable, description, world)
     {
 

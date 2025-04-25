@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Framework2DGame.Base;
 using Framework2DGame.Interfaces;
 
-namespace Framework2DGame
+namespace Framework2DGame.Items
 {
     /// <summary>
     /// Item that can deal damage
@@ -14,7 +14,7 @@ namespace Framework2DGame
     public class AttackItem : WorldObject, IAttackItem
     {
         public int Hit { get; }
-        public int Range {  get; }
+        public int Range { get; }
 
         public string Name { get; }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Framework2DGame
             Hit = hit;
             Range = range;
             Name = name;
-            
+
         }
 
 

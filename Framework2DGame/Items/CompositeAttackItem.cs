@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework2DGame.Interfaces;
 
-namespace Framework2DGame
+namespace Framework2DGame.Items
 {
 
     /// <summary>
@@ -37,7 +37,7 @@ namespace Framework2DGame
         /// <param name="attackItem">Attack item to add to the composite</param>
         public void Add(IAttackItem attackItem)
         {
-            this.attackItems.Add(attackItem);
+            attackItems.Add(attackItem);
         }
 
 
@@ -47,7 +47,7 @@ namespace Framework2DGame
         /// <param name="attackItem">Attack item to be removed from the composite</param>
         public void Remove(IAttackItem attackItem)
         {
-            this.attackItems.Remove(attackItem);
+            attackItems.Remove(attackItem);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Framework2DGame
         {
             return attackItems.Sum(item => item.Hit);
         }
-            
+
         /// <summary>
         /// Gest the lowest range of all attack items
         /// </summary>
@@ -67,7 +67,7 @@ namespace Framework2DGame
         {
             return attackItems.Min(item => item.Range);
         }
-            
+
         /// <summary>
         /// Combines all the descriptions of the items
         /// </summary>
@@ -75,13 +75,13 @@ namespace Framework2DGame
         public string NewDescription()
         {
             StringBuilder sb = new();
-            foreach (var item in attackItems) 
-            { 
-                sb.Append(item.Description); 
-            } 
+            foreach (var item in attackItems)
+            {
+                sb.Append(item.Description);
+            }
             return sb.ToString();
         }
-            
+
 
     }
 }

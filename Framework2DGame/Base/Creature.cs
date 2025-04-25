@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Framework2DGame.Base;
 using Framework2DGame.Interfaces;
+using Framework2DGame.Others;
 
-namespace Framework2DGame
+namespace Framework2DGame.Base
 {
     /// <summary>
     /// Creature is an abstract class that provides a generic template for making different creatures.
@@ -18,7 +18,7 @@ namespace Framework2DGame
         public int HitPoint { get; set; }
         public int PositionX { get; set; }
         public int PositionY { get; set; }
-        
+
         public World world;
         public bool Dead { get { return HitPoint <= 0; } }
 
@@ -38,16 +38,16 @@ namespace Framework2DGame
         //https://refactoring.guru/design-patterns/observer/csharp/example
         private List<IObserver> _observers = new List<IObserver>();
 
-        public IStrategy Strategy {  get; set; }
+        public IStrategy Strategy { get; set; }
 
         public void Attach(IObserver observer)
         {
-            this._observers.Add(observer);
+            _observers.Add(observer);
         }
 
         public void Detach(IObserver observer)
         {
-            this._observers.Remove(observer);
+            _observers.Remove(observer);
         }
 
         private void NotifyHit(int damage)
@@ -73,10 +73,10 @@ namespace Framework2DGame
             PositionX = positionX;
             PositionY = positionY;
             world = ThisWorld;
-            
+
 
             world.creatures.Add(this);
-            LoggingClass.Information($"Added creature {this.Name} to the world");
+            LoggingClass.Information($"Added creature {Name} to the world");
         }
 
         /// <summary>
@@ -89,10 +89,10 @@ namespace Framework2DGame
             if (Strategy == null)
             {
                 Console.WriteLine($"{Name} has no strategy");
-                LoggingClass.Information($"No strategy for creature named {this.Name}");
+                LoggingClass.Information($"No strategy for creature named {Name}");
                 return;
             }
-            
+
             Strategy.Attack(this, creature);
         }
 
@@ -126,9 +126,9 @@ namespace Framework2DGame
             if (HitPoint <= 0)
             {
                 Console.WriteLine($"{Name} died.");
-                LoggingClass.Information($"{this.Name} removed from the world");
+                LoggingClass.Information($"{Name} removed from the world");
                 world.creatures.Remove(this);
-                
+
             }
         }
 
@@ -139,7 +139,8 @@ namespace Framework2DGame
         public void Loot(WorldObject obj)
         {
             if (Dead) return;
-            if (obj.Lootable && world.objects.Contains(obj)) {
+            if (obj.Lootable && world.objects.Contains(obj))
+            {
                 Console.WriteLine($"The object {obj.Name} has been looted by {Name}.");
                 world.objects.Remove(obj);
                 Inventory.Add(obj);
@@ -169,7 +170,7 @@ namespace Framework2DGame
         public void EquipWeapon(string weaponName)
         {
             if (Dead) return;
-            ///LINQ?
+            ///LINQ
             var weapon = Inventory.FirstOrDefault(obj => obj is IAttackItem && obj.Name == weaponName) as IAttackItem;
 
             if (weapon != null)

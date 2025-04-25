@@ -1,6 +1,9 @@
 ﻿using System.Diagnostics;
 using Framework2DGame;
 using Framework2DGame.Base;
+using Framework2DGame.Items;
+using Framework2DGame.Others;
+using Framework2DGame.Strategy;
 
 ReadConfig cnf = new ReadConfig();
 cnf.Start();
@@ -42,7 +45,6 @@ bandido.Attack(gary);
 Console.WriteLine("=======================");
 
 gary.Strategy = new MeeleStrategy();
-LoggingClass.Information($"{gary.Name}'s strategy: {gary.Strategy} Strategy");
 gary.Attack(bandido);
 
 Console.WriteLine("=======================");

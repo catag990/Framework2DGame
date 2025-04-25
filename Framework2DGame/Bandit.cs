@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Framework2DGame.Base;
+using Framework2DGame.Others;
 
 namespace Framework2DGame
 {
