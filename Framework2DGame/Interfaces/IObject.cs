@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Framework2DGame.Interfaces
 {
+    /// <summary>
+    /// Interface of an object
+    /// </summary>
     public interface IObject
     {
         string Description { get; }

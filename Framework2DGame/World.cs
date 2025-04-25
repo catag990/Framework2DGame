@@ -7,6 +7,10 @@ using Framework2DGame.Base;
 
 namespace Framework2DGame
 {
+    /// <summary>
+    /// Playground for the game
+    /// </summary>
+    /// <param name="config">Configuration file</param>
     public class World(ReadConfig config)
     {
         

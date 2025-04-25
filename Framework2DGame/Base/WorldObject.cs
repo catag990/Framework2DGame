@@ -8,6 +8,9 @@ using Framework2DGame.Interfaces;
 
 namespace Framework2DGame.Base
 {
+    /// <summary>
+    /// Item that is in a world
+    /// </summary>
     public class WorldObject : IObject
     {
         public string Name;
@@ -17,6 +20,15 @@ namespace Framework2DGame.Base
         public ItemCategory Category { get; }
 
 
+        /// <summary>
+        /// Initializes a world object
+        /// </summary>
+        /// <param name="name">Name of the object</param>
+        /// <param name="lootable">If the item is lootable</param>
+        /// <param name="removable">If the item is removable</param>
+        /// <param name="description">Description of the item</param>
+        /// <param name="category">Category of the item</param>
+        /// <param name="world">Reference to the world it exist in</param>
         public WorldObject(string name, bool lootable, bool removable, string description, ItemCategory category, World world)
         {
             Name = name;
@@ -27,9 +39,5 @@ namespace Framework2DGame.Base
             world.objects.Add(this);
         }
 
-        public override string ToString()
-        {
-            return $"{Description} {GetType().Name}, removable: {Removable}, lootable: {Lootable}";
-        }
     }
 }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Framework2DGame.Base
 {
+    /// <summary>
+    /// Categories for the items
+    /// </summary>
     public enum ItemCategory
     {
         defense,

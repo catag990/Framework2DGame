@@ -8,27 +8,58 @@ using System.Threading.Tasks;
 
 namespace Framework2DGame
 {
+    /// <summary>
+    /// Logging class to provide logs in all the codes
+    /// </summary>
     public class LoggingClass
     {
 
-        public void Start()
+        private static TraceSource source = new TraceSource("Framework Log");
+
+        static LoggingClass()
         {
-
-            Trace.Listeners.Clear();
-            TraceSource tc = new TraceSource("Framework Log");
-
-            //Tiene que poder ser opcional los trace listeners, además de poder
-            //borrar o añadir otros
-            tc.Listeners.Add(new ConsoleTraceListener());
-            tc.Listeners.Add(new TextWriterTraceListener("GameLog.txt"));
-            tc.Listeners.Add(new XmlWriterTraceListener("log.xml"));
-
-
-
-
-
-
-            Trace.AutoFlush = true;
+            source.Switch = new SourceSwitch("Framework Log Switch", SourceLevels.All.ToString());
         }
+        public static TraceSource Source => source;
+
+
+        /// <summary>
+        /// Gives an information log
+        /// </summary>
+        /// <param name="message">The message in the log</param>
+        public static void Information(string message)
+        {
+            source.TraceEvent(TraceEventType.Information, 707, message);
+        }
+
+        /// <summary>
+        /// Gives a warning log
+        /// </summary>
+        /// <param name="message">The message in the log</param>
+        public static void Warning(string message)
+        {
+            source.TraceEvent(TraceEventType.Warning, 707, message);
+        }
+
+        /// <summary>
+        /// Gives an error log
+        /// </summary>
+        /// <param name="message">The message in the log</param>
+        public static void Error(string message)
+        {
+            source.TraceEvent(TraceEventType.Error, 707, message);
+        }
+
+        /// <summary>
+        /// Gives a critical log
+        /// </summary>
+        /// <param name="message">The message in the log</param>
+        public static void Critical(string message)
+        {
+            source.TraceEvent(TraceEventType.Critical, 707, message);
+        }
+
+
+
     }
 }

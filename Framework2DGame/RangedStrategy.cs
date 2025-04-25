@@ -7,12 +7,23 @@ using Framework2DGame.Interfaces;
 
 namespace Framework2DGame
 {
+ 
+    /// <summary>
+    /// Type of strategy
+    /// </summary>
     public class RangedStrategy : IStrategy
     {
+        /// <summary>
+        /// Makes an attack on a specific target, dealing half damage because of ranged hit
+        /// </summary>
+        /// <param name="attacker">Creature that is giving the hit</param>
+        /// <param name="target">Creature that is receiving the hit</param>
         public void Attack(Creature attacker, Creature target)
         {
             Console.WriteLine($"{attacker.Name} shoots {target.Name}");
-            attacker.Hit(target, 5);
+            attacker.Damage = attacker.Damage / 2;
+            attacker.Hit(target);
+            attacker.Damage = attacker.Damage * 2;
         }
     }
 }

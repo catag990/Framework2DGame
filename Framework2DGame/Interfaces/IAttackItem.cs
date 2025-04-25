@@ -9,6 +9,7 @@ namespace Framework2DGame.Interfaces
 {
     public interface IAttackItem : IObject
     {
+        string Name { get; }
         int Hit { get; }
         int Range { get; }
 
