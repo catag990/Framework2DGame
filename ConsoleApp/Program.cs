@@ -10,8 +10,13 @@ LoggingClass.Source.Listeners.Clear();
 
 //Can add different types of listeners, it's not neccesary to have one
 LoggingClass.Source.Listeners.Add(new TextWriterTraceListener("log.txt"));
+//LoggingClass.Source.Listeners.Add(new TextWriterTraceListener("log.csv"));
+//LoggingClass.Source.Listeners.Add(new ConsoleTraceListener());
+
 
 LoggingClass.Information("Game initialized.");
+
+
 
 var observer = new HitObserver();
 
@@ -25,6 +30,9 @@ Bandit bandido = new Bandit(cnf, "Pedro", 10, 0, 0, world);
 Bandit gary = new Bandit(cnf, "Gary", 10, 0, 0, world);
 bandido.Attach(observer);
 gary.Attach(observer);
+
+Console.WriteLine($"World level is: {cnf.level}");
+Console.WriteLine("=======================");
 
 bandido.Throw(creatura);
 Console.WriteLine("=======================");
